@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea44b69b-8f28-494c-abcc-16aeb1c085fe" name="Changes" comment="chore: init next app" />
+    <list default="true" id="ea44b69b-8f28-494c-abcc-16aeb1c085fe" name="Changes" comment="chore: init next app">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,23 +17,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0007279113697618" />
-      <entry key="S2" value="1.5814593972340487" />
-      <entry key="S5" value="3.900486036087825" />
-      <entry key="S10" value="6.078910950109125" />
-      <entry key="S30" value="8.42769561452854" />
-      <entry key="S60" value="9.177366805406677" />
-      <entry key="M2" value="9.64847562995198" />
-      <entry key="M5" value="10.355452140720013" />
-      <entry key="M10" value="10.940500126774573" />
-      <entry key="M15" value="11.224697004157255" />
-      <entry key="M30" value="11.572587385651655" />
-      <entry key="H1" value="11.775220662840868" />
-      <entry key="H2" value="11.884686333822644" />
-      <entry key="H4" value="11.941591740474964" />
-      <entry key="D1" value="11.990159144954765" />
-      <entry key="W1" value="11.998591540556847" />
+      <entry key="MS100" value="1.0001339381237693" />
+      <entry key="MS500" value="1.4125461017467529" />
+      <entry key="S2" value="3.2332754509763206" />
+      <entry key="S5" value="4.164394071770604" />
+      <entry key="S10" value="4.57064656665243" />
+      <entry key="S30" value="5.634715927484592" />
+      <entry key="S60" value="7.097150822833217" />
+      <entry key="M2" value="8.582425198289444" />
+      <entry key="M5" value="10.74650752698966" />
+      <entry key="M10" value="14.416774952692874" />
+      <entry key="M15" value="17.307345104623675" />
+      <entry key="M30" value="22.063096147707324" />
+      <entry key="H1" value="25.520483315742172" />
+      <entry key="H2" value="27.61463982094743" />
+      <entry key="H4" value="28.76840970207803" />
+      <entry key="D1" value="29.78910319770068" />
+      <entry key="W1" value="29.969730894158154" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -53,23 +55,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8467453123625271" />
-      <entry key="MS500" value="0.9680003053259498" />
-      <entry key="S2" value="1.5724344444149612" />
-      <entry key="S5" value="3.8956909453289446" />
-      <entry key="S10" value="6.075958733443795" />
-      <entry key="S30" value="8.426512089768936" />
-      <entry key="S60" value="9.176715498793747" />
-      <entry key="M2" value="9.64776479919478" />
-      <entry key="M5" value="10.354167320933504" />
-      <entry key="M10" value="10.939310161281858" />
-      <entry key="M15" value="11.223717040447657" />
-      <entry key="M30" value="11.571980860033529" />
-      <entry key="H1" value="11.77488303422471" />
-      <entry key="H2" value="11.884508185165553" />
-      <entry key="H4" value="11.941500233522527" />
-      <entry key="D1" value="11.99014354722279" />
-      <entry key="W1" value="11.998589303706254" />
+      <entry key="MS100" value="0.972784528166531" />
+      <entry key="MS500" value="1.4044329864477583" />
+      <entry key="S2" value="3.2284064991117494" />
+      <entry key="S5" value="4.1618656323651" />
+      <entry key="S10" value="4.5692541710072945" />
+      <entry key="S30" value="5.63411215507166" />
+      <entry key="S60" value="7.096746383784738" />
+      <entry key="M2" value="8.582169796731009" />
+      <entry key="M5" value="10.746304117698442" />
+      <entry key="M10" value="14.416402812230539" />
+      <entry key="M15" value="17.306894152906676" />
+      <entry key="M30" value="22.06266733475482" />
+      <entry key="H1" value="25.520184266796495" />
+      <entry key="H2" value="27.614462860860606" />
+      <entry key="H4" value="28.76831340280996" />
+      <entry key="D1" value="29.7890859706108" />
+      <entry key="W1" value="29.969728403055086" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -81,28 +83,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/Users/nastamastaeva/.nvm/versions/node/v20.20.2/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.runtime&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/nastamastaeva/WebstormProjects/dance-studio/node_modules/typescript/lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "js.debugger.nextJs.config.created.client": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "/Users/nastamastaeva/.nvm/versions/node/v20.20.2/bin/node",
+    "nodejs_package_manager_path": "pnpm",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "settings.javascript.runtime",
+    "ts.external.directory.path": "/Applications/WebStorm.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external"
   }
-}</component>
-  <component name="RunManager" selected="npm.dev">
+}]]></component>
+  <component name="RunManager" selected="npm.build">
     <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -115,9 +129,43 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint:fix" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:fix" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="typecheck" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="typecheck" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.typecheck" />
+        <item itemvalue="npm.lint:fix" />
+        <item itemvalue="npm.lint" />
       </list>
     </recent_temporary>
   </component>
@@ -136,6 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1795267180807</updated>
       <workItem from="1795267181739" duration="4873000" />
+      <workItem from="1795272436716" duration="1468000" />
     </task>
     <task id="LOCAL-00001" summary="chore: init next app">
       <option name="closed" value="true" />
