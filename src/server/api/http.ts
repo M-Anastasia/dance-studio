@@ -58,7 +58,7 @@ export const parseQuery = <S extends z.ZodType>(
   };
 };
 
-export const handle =
+export const withErrorHandling =
   <Args extends unknown[]>(
     fn: (...args: Args) => Promise<Response> | Response,
   ): ((...args: Args) => Promise<Response>) =>
