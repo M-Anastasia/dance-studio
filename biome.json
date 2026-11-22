@@ -22,7 +22,39 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "recommended": true,
+      "style": {
+        "useConsistentArrowReturn": "error",
+        "useNamingConvention": {
+          "level": "error",
+          "options": {
+            "strictCase": false,
+            "conventions": [
+              {
+                "selector": {
+                  "kind": "function"
+                },
+                "formats": ["camelCase"],
+                "match": "_|.{2,}"
+              },
+              {
+                "selector": {
+                  "kind": "variable"
+                },
+                "formats": ["camelCase", "CONSTANT_CASE"],
+                "match": "_|.{2,}"
+              },
+              {
+                "selector": {
+                  "kind": "functionParameter"
+                },
+                "formats": ["camelCase"],
+                "match": "_|.{2,}"
+              }
+            ]
+          }
+        }
+      }
     },
     "domains": {
       "next": "recommended",
