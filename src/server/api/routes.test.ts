@@ -1,12 +1,12 @@
+import { GET as getClasses } from "@app/api/classes/route";
+import { GET as getHallBookings } from "@app/api/hall-bookings/route";
+import { GET as getHall } from "@app/api/halls/[id]/route";
+import { GET as getHalls } from "@app/api/halls/route";
 import { NextRequest } from "next/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { GET as getClasses } from "../api/classes/route";
-import { GET as getHallBookings } from "../api/hall-bookings/route";
-import { GET as getHall } from "../api/halls/[id]/route";
-import { GET as getHalls } from "../api/halls/route";
 import { setRepository } from "../db";
 import { createInMemoryRepository } from "../db/repository";
-import { createSeed } from "../db/seed";
+import { createSeed, HALL_BIG_ID, HALL_SMALL_ID } from "../db/seed";
 import { withErrorHandling } from "./http";
 
 const ANCHOR = new Date("2026-12-07T00:00:00.000Z");
@@ -27,8 +27,8 @@ describe("GET /api/halls", () => {
 
 describe("GET /api/halls/[id]", () => {
   it("возвращает зал по идентификатору", async () => {
-    const response = await getHall(request("/api/halls/hall-big"), {
-      params: Promise.resolve({ id: "hall-big" }),
+    const response = await getHall(request(`/api/halls/${HALL_BIG_ID}`), {
+      params: Promise.resolve({ id: HALL_BIG_ID }),
     });
     expect(response.status).toBe(200);
     expect((await response.json()).capacity).toBe(30);
@@ -46,7 +46,7 @@ describe("GET /api/halls/[id]", () => {
 describe("GET /api/classes", () => {
   it("возвращает все занятия без фильтров", async () => {
     const response = await getClasses(request("/api/classes"));
-    expect(await response.json()).toHaveLength(24); // 6 занятий × 4 недели
+    expect(await response.json()).toHaveLength(84); // 21 занятие в неделю × 4 недели
   });
 
   it("фильтрует по интервалу", async () => {
@@ -56,16 +56,18 @@ describe("GET /api/classes", () => {
       ),
     );
     const body = await response.json();
-    expect(body).toHaveLength(1);
-    expect(body[0].direction).toBe("Contemporary");
+    expect(body).toHaveLength(5);
+    expect(
+      body.map((item: { teacher: string }) => item.teacher).sort(),
+    ).toEqual(["Катя", "Ксюша", "Маша", "Маша", "Настя"]);
   });
 
   it("фильтрует по залу", async () => {
     const response = await getClasses(
-      request("/api/classes?hallId=hall-small"),
+      request(`/api/classes?hallId=${HALL_SMALL_ID}`),
     );
     const body = await response.json();
-    expect(body).toHaveLength(8); // 2 занятия × 4 недели
+    expect(body).toHaveLength(40); // 10 занятий в неделю × 4 недели
   });
 
   it('отклоняет "от" без "до"', async () => {

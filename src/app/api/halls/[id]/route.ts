@@ -1,6 +1,6 @@
+import { jsonError, jsonOk, withErrorHandling } from "@server/api/http";
+import { getRepository } from "@server/db";
 import type { NextRequest } from "next/server";
-import { getRepository } from "../../../db";
-import { jsonError, jsonOk, withErrorHandling } from "../../http";
 
 export const GET = withErrorHandling(
   async (

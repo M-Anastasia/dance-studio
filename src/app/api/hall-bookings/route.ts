@@ -1,7 +1,7 @@
+import { jsonOk, parseQuery, withErrorHandling } from "@server/api/http";
+import { ListQuerySchema, toTimeRange } from "@server/api/queries";
+import { getRepository } from "@server/db";
 import type { NextRequest } from "next/server";
-import { getRepository } from "../../db";
-import { jsonOk, parseQuery, withErrorHandling } from "../http";
-import { ListQuerySchema, toTimeRange } from "../queries";
 
 export const GET = withErrorHandling(async (request: NextRequest) => {
   const query = parseQuery(ListQuerySchema, request.nextUrl.searchParams);
