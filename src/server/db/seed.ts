@@ -37,60 +37,126 @@ const halls: Hall[] = [
   { id: HALL_SMALL_ID, name: "Малый зал", capacity: 15 },
 ];
 
-const classTemplates = [
+const MON = 0;
+const TUE = 1;
+const WED = 2;
+const THU = 3;
+
+const MON_WED = [MON, WED];
+const TUE_THU = [TUE, THU];
+
+type ClassTemplate = {
+  days: number[];
+  hour: number;
+  minutes: number;
+  direction: string;
+  teacher: string;
+  hallId: string;
+  maxStudents: number;
+};
+
+const classTemplates: ClassTemplate[] = [
+  // Большой зал
   {
-    day: 0,
-    hour: 20,
-    minutes: 60,
-    direction: "Contemporary",
-    teacher: "Анна",
-    hallId: HALL_BIG_ID,
-    maxStudents: 25,
-  },
-  {
-    day: 1,
-    hour: 20,
-    minutes: 90,
-    direction: "Hip-hop",
-    teacher: "Игорь",
-    hallId: HALL_BIG_ID,
-    maxStudents: 28,
-  },
-  {
-    day: 2,
-    hour: 20,
-    minutes: 60,
-    direction: "Contemporary",
-    teacher: "Анна",
-    hallId: HALL_BIG_ID,
-    maxStudents: 25,
-  },
-  {
-    day: 3,
-    hour: 20,
-    minutes: 90,
-    direction: "Hip-hop",
-    teacher: "Игорь",
-    hallId: HALL_BIG_ID,
-    maxStudents: 28,
-  },
-  {
-    day: 1,
+    days: MON_WED,
     hour: 18,
     minutes: 60,
-    direction: "Растяжка",
-    teacher: "Мария",
-    hallId: HALL_SMALL_ID,
-    maxStudents: 12,
+    direction: "Choreo (beginners)",
+    teacher: "Маша",
+    hallId: HALL_BIG_ID,
+    maxStudents: 30,
   },
   {
-    day: 3,
+    days: MON_WED,
+    hour: 19,
+    minutes: 60,
+    direction: "Choreo (pro)",
+    teacher: "Маша",
+    hallId: HALL_BIG_ID,
+    maxStudents: 30,
+  },
+  {
+    days: MON_WED,
+    hour: 20,
+    minutes: 60,
+    direction: "High heels / Choreo",
+    teacher: "Катя",
+    hallId: HALL_BIG_ID,
+    maxStudents: 30,
+  },
+  {
+    days: [THU],
+    hour: 12,
+    minutes: 120,
+    direction: "High heels (beginners)",
+    teacher: "Катя",
+    hallId: HALL_BIG_ID,
+    maxStudents: 30,
+  },
+  {
+    days: TUE_THU,
+    hour: 19,
+    minutes: 60,
+    direction: "High heels",
+    teacher: "Настя",
+    hallId: HALL_BIG_ID,
+    maxStudents: 30,
+  },
+  {
+    days: TUE_THU,
+    hour: 20,
+    minutes: 90,
+    direction: "High heels / Choreo",
+    teacher: "Саша",
+    hallId: HALL_BIG_ID,
+    maxStudents: 30,
+  },
+
+  // Малый зал
+  {
+    days: MON_WED,
     hour: 18,
     minutes: 60,
-    direction: "Растяжка",
-    teacher: "Мария",
+    direction: "Twerk",
+    teacher: "Ксюша",
     hallId: HALL_SMALL_ID,
-    maxStudents: 12,
+    maxStudents: 15,
+  },
+  {
+    days: MON_WED,
+    hour: 21,
+    minutes: 60,
+    direction: "Dancehall female",
+    teacher: "Настя",
+    hallId: HALL_SMALL_ID,
+    maxStudents: 15,
+  },
+  {
+    days: TUE_THU,
+    hour: 18,
+    minutes: 60,
+    direction: "High heels / Choreo",
+    teacher: "Света",
+    hallId: HALL_SMALL_ID,
+    maxStudents: 15,
+  },
+  {
+    days: TUE_THU,
+    hour: 19,
+    minutes: 60,
+    direction: "Heels choreo",
+    teacher: "Вика",
+    hallId: HALL_SMALL_ID,
+    maxStudents: 15,
+  },
+  {
+    days: TUE_THU,
+    hour: 20,
+    minutes: 60,
+    direction: "Freestyle",
+    teacher: "Вика",
+    hallId: HALL_SMALL_ID,
+    maxStudents: 15,
   },
 ];
 
@@ -98,22 +164,23 @@ export const createSeed = (anchorMonday: Date, weeks = 4): SeedData => {
   const classes: GroupClass[] = [];
 
   for (let week = 0; week < weeks; week++) {
-    const monday = new Date(anchorMonday.getTime() + week * 7 * DAY);
     for (const [index, template] of classTemplates.entries()) {
-      const start = getIsoTimestampFromWeekStart(
-        monday,
-        template.day,
-        template.hour,
-      );
-      classes.push({
-        id: `class-w${week}-${index}`,
-        direction: template.direction,
-        teacher: template.teacher,
-        hallId: template.hallId,
-        start,
-        end: addMinutesToIso(start, template.minutes),
-        maxStudents: template.maxStudents,
-      });
+      for (const day of template.days) {
+        const start = getIsoTimestampFromWeekStart(
+          anchorMonday,
+          week * 7 + day,
+          template.hour,
+        );
+        classes.push({
+          id: `class-w${week}-t${index}-d${day}`,
+          direction: template.direction,
+          teacher: template.teacher,
+          hallId: template.hallId,
+          start,
+          end: addMinutesToIso(start, template.minutes),
+          maxStudents: template.maxStudents,
+        });
+      }
     }
   }
 

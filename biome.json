@@ -34,14 +34,14 @@
                 "selector": {
                   "kind": "function"
                 },
-                "formats": ["camelCase"],
+                "formats": ["camelCase", "PascalCase"],
                 "match": "_|.{2,}"
               },
               {
                 "selector": {
                   "kind": "variable"
                 },
-                "formats": ["camelCase", "CONSTANT_CASE"],
+                "formats": ["camelCase", "PascalCase", "CONSTANT_CASE"],
                 "match": "_|.{2,}"
               },
               {
@@ -50,6 +50,12 @@
                 },
                 "formats": ["camelCase"],
                 "match": "_|.{2,}"
+              },
+              {
+                "selector": {
+                  "kind": "objectLiteralProperty"
+                },
+                "formats": ["camelCase", "CONSTANT_CASE"]
               }
             ]
           }

@@ -77,14 +77,17 @@ describe("createClass", () => {
   });
 
   it("разрешает то же время в другом зале", () => {
-    const result = newRepo().createClass(
-      input(
-        HALL_SMALL_ID,
-        "2026-12-07T20:30:00.000Z",
-        "2026-12-07T21:30:00.000Z",
-      ),
-    );
-    expect(result.ok).toBe(true);
+    const repo = createInMemoryRepository({
+      halls: createSeed(ANCHOR).halls,
+      classes: [],
+      hallBookings: [],
+    });
+    const start = "2026-12-07T20:00:00.000Z";
+    const end = "2026-12-07T21:00:00.000Z";
+
+    expect(repo.createClass(input(HALL_BIG_ID, start, end)).ok).toBe(true);
+    expect(repo.createClass(input(HALL_SMALL_ID, start, end)).ok).toBe(true);
+    expect(repo.createClass(input(HALL_BIG_ID, start, end)).ok).toBe(false);
   });
 
   it("учитывает бронь через полночь", () => {
